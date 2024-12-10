@@ -1,0 +1,101 @@
+.carousel-img{
+    height: 65vh;
+    object-fit: cover;
+}
+.container,
+.contacts {
+    width: 65%;
+    align-items: left;
+    margin: 0;
+    padding-left: 50px;
+}
+.contacts {
+    display: block;
+    margin-bottom: 5%;
+}
+.about-title {
+    width: 60%;
+    margin-top: -15%;
+    font-family: Open Sans, sans-serif;
+}
+.afis{
+    padding-top: 3%;
+}
+.benefits {
+    width: 65%;
+    margin: 0;
+    padding-right: 10%;
+    margin-left: 40%;
+}
+.benefits-title {
+    display: block;
+    width: 40%;
+    margin-top: 50px;
+}
+
+/* Initial hidden state */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Start 20px below */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+}
+
+@media screen and (max-width: 992px) {
+    #body-content{
+        margin-top: -120px;
+    }
+    .carousel-img{
+        height: 50vh;
+    }
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .about-title {
+        display: none;
+    }
+    .afis {
+        margin-top: -45%;
+        padding: 10% 7%;
+        padding-bottom: 0;
+    }
+    .bnfts {
+        padding: 5%;
+        padding-bottom: 0;
+    }
+    .contacts {
+        width: 100%;
+        padding-bottom: 50px;
+        padding-left: 10%;
+    }
+    .benefits,
+    .benefits-title{
+        width: 100%;
+        margin: 0;
+        padding-left: 5%;
+    }
+
+    .about-title,
+    .benefits-title,
+    .contacts-title {
+        margin-top: 5%;
+    }
+    .carousel-caption h4 {
+        font-size: 16px;
+    }
+    .carousel-caption p {
+        font-size: 12px;
+    }
+    .fade-in {
+        opacity: 1; /* Make elements always visible */
+        transform: translateY(0); /* Reset position */
+        transition: none; /* Disable transitions */
+    }
+}
