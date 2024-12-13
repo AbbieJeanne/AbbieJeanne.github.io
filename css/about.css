@@ -1,5 +1,6 @@
 .carousel-img{
     height: 65vh;
+    width: 100vw;
     object-fit: cover;
 }
 .container,
@@ -15,7 +16,7 @@
 }
 .about-title {
     width: 60%;
-    margin-top: -15%;
+    margin-top: -12%;
     font-family: Open Sans, sans-serif;
 }
 .afis{
@@ -36,14 +37,25 @@
 /* Initial hidden state */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px); /* Start 20px below */
+  transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Visible state */
 .fade-in.visible {
   opacity: 1;
-  transform: translateY(0); /* Reset position */
+  transform: translateY(0); 
+}
+
+.fas {
+    display: none;
+}
+
+#carouselExampleCaptions {
+    margin-top: -150px;
+}
+
+#project-sites-nav {
+    display: none;
 }
 
 @media screen and (max-width: 992px) {
@@ -52,11 +64,13 @@
     }
     .carousel-img{
         height: 50vh;
+        margin-top: 150px !important;
     }
     .container {
         width: 100%;
         margin: 0;
         padding: 0;
+        margin-top: 90px;
     }
     .about-title {
         display: none;
@@ -94,8 +108,46 @@
         font-size: 12px;
     }
     .fade-in {
-        opacity: 1; /* Make elements always visible */
-        transform: translateY(0); /* Reset position */
-        transition: none; /* Disable transitions */
+        opacity: 1;
+        transform: translateY(0);
+        transition: none; 
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        margin-top: 150px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar-custom {
+        display: none !important;
+    }
+
+    #project-sites-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 8vh; 
+        background-color: var(--primary-color); 
+        z-index: 1000;
+        padding: 0 1rem;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+    }
+
+    #project-sites-title {
+        flex: 1; 
+        text-align: center; 
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--tertiary-color);
+        margin: 0;
+    }
+
+    .container {
+        margin-top: 10px !important;
     }
 }

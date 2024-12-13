@@ -5,6 +5,8 @@ body{
     --secondary-color: #6A9C89;
     --tertiary-color: #C4DAD2;
     --quinary-color: #E9EFEC;
+    margin: 0;
+    padding: 0;
 }
 .primary-color{
     color: var(--primary-color);
@@ -22,164 +24,301 @@ body{
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
-@media screen and (max-width: 500px) {
-body {
-	margin: 0;
-	padding: 0;
-}
 
 .login-bg{
     background-image: url(../images/sugar-cane-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100vh;
+}
+
+.navbar-custom{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.navbar{
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+    height: 8vh; 
+    font-size: 13pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-field{
+    position: relative;
+    margin: 10px 0;
+}
+
+.input-field input{
+    width: 80%;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid #80847F;
+    color: #000;
+    outline: none;
+    background-color: #fff;
+}
+
+.input-field label{
+    position: absolute;
+    top: 34%;
+    left: 50px;
+    transform: translateY(-40%);
+    color: #80847F;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+input:focus{
+    border: 1px solid var(--primary-color);;
+}
+
+.input-field input:focus ~ label,
+.input-field input:not(:placeholder-shown) ~ label {
+    top: 0;
+    left: 50px;
+    font-size: 12px;
+    border-radius: 7px;
+    padding: 0 10px;
+    color: #fff;
+    background: var(--primary-color);
 }
 
 #body-content{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     width: 100vw;
 }
 
-.logo {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.login-textfield-bg{
-    width: 380px; 
-    height: auto;
-}
-
-.input-field{
-  position: relative;
-  margin: 10px 0;
-}
-.input-field input{
-  width: 80%;
-  height: 40px;
-  border-radius: 6px;
-  font-size: 16px;
-  padding: 0 10px;
-  border: 1px solid #80847F;
-  color: #000;
-  outline: none;
-  background-color: #fff;
-}
-.input-field label{
-  position: absolute;
-  top: 34%;
-  left: 50px;
-  transform: translateY(-40%);
-  color: #80847F;
-  font-size: 16px;
-  pointer-events: none;
-  transition: 0.3s;
-}
-input:focus{
-  border: 1px solid var(--primary-color);;
-}
-.input-field input:focus ~ label,
-.input-field input:not(:placeholder-shown) ~ label {
-  top: 0;
-  left: 50px;
-  font-size: 12px;
-  border-radius: 7px;
-  padding: 0 10px;
-  color: #fff;
-  background: var(--primary-color);
-}
-
-.divider {
-    width: 100%; /* Set the width as needed */
-    height: 2px; /* Set the thickness of the line */
-    background-color: white; /* Color of the line */
-    margin: 30px 0;
-}
-
+.divider,
 .about {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: white;
+    display: none;
 }
 
-a {
-	text-decoration: none;
-	color: white;
+@media screen and (max-width: 500px) {
+    body {
+    	margin: 0;
+    	padding: 0;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    #body-content{
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .logo {
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    }
+
+    .login-textfield-bg{
+        width: 380px; 
+        height: auto;
+        background-color: transparent !important;
+    }
+
+    .divider {
+        display: flex;
+        width: 100%; 
+        height: 2px; 
+        background-color: white; 
+        margin: 30px 0;
+    }
+
+    .about {
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	color: white;
+    }
+
+    a {
+    	text-decoration: none;
+    	color: white;
+    }
+
+    /* Fixed Button at the Bottom */
+    .fixed-bottom {
+        position: fixed;
+        margin-bottom: 5%;
+        margin-left: 10%;
+        z-index: 1000;
+    }
+
+    .fixed-bottom i {
+        font-size: 18px;
+        margin-left: 50px;
+    }
+
+    .sub-box{
+        width: 90vw;
+        margin-left: 23px;
+    }
+
+    .site {
+        height: 225px;
+        margin-top: 70px;
+    }
+
+    .site2, .site3 {
+        height: 225px;
+        margin-top: 25px;
+    }
+
+    .site3 {
+        margin-bottom: 90px;
+    }
+
+    .sub-box-img-batangas{
+        background-image: url('../images/location/bspcma.jpg');
+        background-size: cover;
+    }
+
+    .table {
+        width: 100%; 
+        height: auto;
+        font-size: 14px; 
+    }
+
+    th, td {
+        width: 100px;
+        white-space: nowrap;
+    }
+
+    .responsive-card {
+        width: 100% !important;
+        margin: 0 important; 
+        padding: 0 !important; 
+        margin-top: -150px !important;
+        border: none;
+    }
+
+    .new {
+        display: flex;
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+    }
+
+    .reg-mobile-bg {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; 
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat; 
+        z-index: -1; 
+        }
+
+        #data {
+        position: absolute; 
+        width: 70vh;
+        top: 10%;
+        left: 40%; 
+        transform: translateX(-50%); 
+    }
+
+    .btn{
+        width: 80%;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 16px;
+        padding: 0 10px;
+        border: none !important;
+    }
+
 }
 
-/* Fixed Button at the Bottom */
-.fixed-bottom {
-    position: fixed;
-    margin-bottom: 5%;
-    margin-left: 10%;
-    z-index: 1000;
-}
-
-.fixed-bottom i {
-    font-size: 18px;
-    margin-left: 50px;
-}
-
-}
-
-/* Container for navigation */
 #project-sites-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures proper spacing */
+    justify-content: space-between; 
     position: fixed;
     top: 0;
     width: 100%;
-    height: 8vh; /* Keeps height consistent */
-    background-color: var(--primary-color); /* Background color */
+    height: 8vh; 
+    background-color: var(--primary-color); 
     z-index: 1000;
-    padding: 0 1rem; /* Add padding for spacing on sides */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
+    padding: 0 1rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
-/* Title styling */
 #project-sites-title {
-    flex: 1; /* Makes it take the available space */
-    text-align: center; /* Centers the title */
+    flex: 1; 
+    text-align: center; 
     font-size: 24px;
     font-weight: 600;
-    color: var(--tertiary-color); /* Text color */
+    color: var(--tertiary-color);
     margin: 0;
 }
 
-/* Icon styling */
 .fas {
-    font-size: 30px; /* Adjust icon size */
-    color: var(--tertiary-color); /* Match color with title */
-    cursor: pointer; /* Makes it interactive */
+    font-size: 30px;
+    color: var(--tertiary-color); 
+    cursor: pointer; 
 }
 
-/* Optional hover effect for icon */
 .fas:hover {
-    color: var(--secondary-color); /* Change color on hover */
-    transform: scale(1.1); /* Subtle scaling */
+    color: var(--secondary-color); 
+    transform: scale(1.1); 
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     #project-sites-title {
-        font-size: 20px; /* Adjust title size for smaller screens */
+        font-size: 20px;
     }
     .fas {
-        font-size: 24px; /* Adjust icon size for smaller screens */
+        font-size: 24px;
     }
 }
 
-.btn{
-  width: 80%;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 16px;
-  padding: 0 10px;
+
+a {
+    text-decoration: none !important;
+    color: white !important;
 }
 
+a:hover {
+    color: inherit; 
+    text-decoration: none;
+}
+
+.sub-box-title{
+    padding: 5.6rem 0rem; 
+    color: #fff; 
+    font-size: 21px; 
+    font-weight: bold; 
+    background-color: rgba(0, 0, 0, 0.40); 
+    width: 100%; 
+    text-align: center;
+    border: 2px solid;
+    border-radius: 7px;
+}
+
+.login-textfield-bg{
+    width: 380px; 
+    height: auto;
+    background-color: #fff; 
+    opacity: .7;
+    overflow-x: auto;
+}
